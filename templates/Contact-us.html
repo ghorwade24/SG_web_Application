@@ -1,0 +1,116 @@
+{% extends "home.html" %}
+{% block content %}
+<style>
+    .contact-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+       
+    }
+    .contact-section {
+        max-width: 500px;
+        margin: auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+    
+    .contact-section h2 {
+        text-align: center;
+        color: rgb(241, 221, 7);
+        margin-bottom: 20px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding:5px;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+    
+    .contact-item p {
+        text-align: left;
+        margin: 0;
+        color: #555;
+    }
+    
+    .contact-item strong {
+        color: brown;
+    
+    }
+    
+</style>
+
+<div class="about-img">
+    <img src="/media/imges/360_F_680460912_UG3v72Xo7kBJUVWnHjMpkhGaSVWgsOHk.webp" alt="content">
+
+    <div class="image-text">
+        <h4>Contact-us</h4>
+    </div>
+</div>
+<h1>Please give your valuble feedback for us!</h1>
+<div class="contact-container">
+    
+    <form  method="post" action="{% url 'contact' %}">
+      {% csrf_token %}
+      
+      <div class="mb-3">
+          <input type="text" class="form-control" id="name" name="name" placeholder="name">
+      </div>
+      
+      <div class="mb-3">
+          <input type="text" class="form-control" id="mobile" name="mobile" placeholder="9999999999">
+      </div>
+      
+      <div class="mb-3">
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+      </div>
+      
+      <div class="mb-3">
+          <textarea class="form-control" id="feedback" name="feedback" placeholder="feedback" rows="3"></textarea>
+      </div>
+      
+      <div class="contact-form-submit-container">
+        <button type="submit" class="contact-btn contact-btn-submit">Submit</button>
+      </div>
+    </form>
+    <div class="contact-section">
+        <h2>Get In Touch</h2>
+        <div class="contact-item">
+            <img src="/media/imges/phone-handset_icon-icons.com_48252.png" alt="Phone Icon" class="contact-icon">
+            <div>
+                <p><strong>Phone:</strong></p>
+                <p>For franchise contact: 8999773124</p>
+                <p>For operations and other queries contact: +91 9822648062</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <img src="/media/imges/mail.png" alt="Email Icon" class="contact-icon">
+            <div>
+                <p><strong>Email:</strong></p>
+                <p>sgpanipuri@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <img src="/media/imges/location.png" alt="Location Icon" class="contact-icon">
+            <div>
+                <p><strong>Address:</strong></p>
+                <p>Janta vahasat, Parvati paytha,lane 16, Pune 411009 </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}

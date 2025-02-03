@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href={% static "Style.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+   
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src='/media/imges/PaniPuri_Logo.jpg' alt="logo">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about-us' %}">About-us</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'franchasi' %}">Franchasi</a></li>
+                <li><a href="{% url 'contact' %}">Contact-us</a></li>
+                <li><a class="O-button" href="{% url 'order' %}">Order</a></li>
+                <li class="toggle-sidebar" onclick=showSlider()><a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+            
+        </nav>
+      
+        <nav class = "sidebar-navbar">
+            <span class="sidebar-close">&times;</span>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about-us' %}">About-us</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'franchasi' %}">Franchasi</a></li>
+                <li><a href="{% url 'contact' %}">Contact-us</a></li>
+            
+                
+            </ul>
+            
+        </nav>
+    </header>
+
+{% block content %}
+    <div class="about-img">
+        
+        <img src="/media/imges/pani-puri.webp" class="d-block w-100" alt="Pani Puri">
+
+    </div>
+
+
+    <section class="Home-intro">
+        <div class="container3">
+            <div class="image">
+                <img src="/media/imges/360_F_820098572_Kw503SSwhXg59MspQSi5DLbOYw9qYqk1.webp" alt="Search">
+            </div>
+            <div class="content">
+                <h2>Welcome to SG PANI PURI</h2>
+                <h1>Best PANI PURI in Maharashtra</h1>
+                <p>
+                    Our Story: Founded in 2010 by my mom, our Pani Puri business has its roots in the vibrant street food
+                    culture of India. Over the years, we've remained committed to preserving the original flavors while also
+                    introducing new twists to cater to evolving tastes.
+                    <br><br>
+                    Today, our Pani Puri is not just food—it's an experience that brings people together, evoking nostalgia
+                    and creating new memories. We take pride in using fresh ingredients, maintaining hygiene, and serving
+                    every customer with a warm smile.
+                </p>
+            </div>
+        </div>
+    </section>
+    <Section class="Menu-section-homepage">
+        <div class="carousel-homepage">
+            <div class="carousel-images-homepage">
+                <img src="/media/imges/pani-puri.webp" alt="Image 1">
+                <img src="/media/imges/360_F_680460912_UG3v72Xo7kBJUVWnHjMpkhGaSVWgsOHk.webp" alt="Image 2">
+                <img src="/media/imges/bhel-or-bhelpuri-chat-item-india.webp" alt="Image 3">
+                <img src="/media/imges/360_F_767871778_Maf74WxMU9o8ayw4oZYnN9SVtyBsF56m.webp" alt="Image 4">
+                <img src="/media/imges/sev-puri-recipe.webp" alt="Image 5">
+                <img src="/media/imges/masala-puri.webp" alt="Image 6">
+                <img src="/media/imges/360_F_820098572_Kw503SSwhXg59MspQSi5DLbOYw9qYqk1.webp" alt="Image 7">
+                <img src="/media/imges/masala-puri.webp" alt="Image 8">
+            </div>
+        </div>
+        <div class="our-menu-homepage">
+            
+            <h1>Our Menu: A Feast of Flavors</h1>
+            <p>
+                Indulge in the irresistible flavors of authentic Indian street food with our specially curated menu. At SG 
+                Pani Puri, every dish is crafted to perfection, bringing you the true taste of tradition. From the crispy 
+                crunch of pani puris filled with tangy and spicy water to the savory delight of sev puri, our menu is a 
+                celebration of taste and quality.
+                Enjoy a variety of iconic chaat dishes, including bhel puri and masala puri, each prepared with the freshest
+                ingredients and aromatic spices that will tantalize your taste buds. Whether you crave the zing of tamarind 
+                chutney, the heat of green chilies, or the sweetness of jaggery, we have something to satisfy every flavor 
+                profile.
+                At SG Pani Puri, we believe in creating joyful moments through food. Our menu is designed to cater to everyone,
+                from street food enthusiasts to families looking for a nostalgic dining experience.
+                So, what are you waiting for? Dive into our menu and discover the magic of Indian street food like never before!
+            </p>
+        </div>
+        
+    </Section>
+    <section class="Why-we-Choose-homepage">
+        <div class = "why-we-homepage">
+            <h1 class="heading-why-homepage">Why Choose SG Pani Puri?</h1>
+            <p id = "Points-of-why-homepage">
+                At SG Pani Puri, we strive to offer more than just food; we deliver an experience that celebrates tradition, taste, and quality. 
+                Here’s why our customers love and trust us:
+                <br>
+                Fresh Ingredients: We believe in quality you can taste. All our dishes are made using the freshest, handpicked ingredients to 
+                ensure every bite is as delicious as the last.
+                Authentic Flavors: Our recipes are deeply rooted in the authentic street food culture of India, crafted to perfection to bring you the iconic taste of pani puri.
+                Family Recipes: Each recipe is a family treasure, perfected over generations to give you that nostalgic, homely flavor in every serving.
+                Hygiene & Quality: Cleanliness is our priority. We follow the highest hygiene standards to ensure your food is not just tasty but also safe to eat.
+                Customized for You: Whether you like it tangy, spicy, or sweet, our menu caters to all flavor preferences, making sure everyone gets their perfect plate.
+                Memorable Experience: We aim to do more than satisfy your hunger; we create joyful moments that bring friends and families together over a shared love for pani puri.
+                Visit us and discover why SG Pani Puri is the go-to destination for authentic, mouthwatering pani puri!
+            </p>
+        </div>
+        <div class="carousel-homepage">
+            <div class="carousel-images-homepage">
+              <img src="/media/imges/pani-puri.webp" alt="Image 1">
+              <img src="/media/imges/sev-puri-chat.webp" alt="Image 2">
+              <img src="/media/imges/bhel-or-bhelpuri-chat-item-india.webp" alt="Image 3">
+            </div>
+            
+        </div>
+    </section>
+    
+      
+
+    
+{% endblock %}
+
+    <footer id="container2">
+        <div class="header">
+            <img src="/media/imges/PaniPuri_Logo.jpg" alt="Osumare Logo" class="logo">
+            <p class="description">Welcome to SG Pani Puri<br>Best and Classic</p>
+        </div>
+        <div class="content2">
+            <div class="menu">
+                <h3 >Menu</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about-us' %}">About-us</a></li>
+                    <li><a href="{% url 'menu' %}">Menu</a></li>
+                    <li><a href="{% url 'franchasi' %}">Franchasi</a></li>
+                    <li><a href="{% url 'contact' %}">Contact-us</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <h3>Social</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sg_pani_puri/"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                    <a href="https://www.instagram.com/sg_pani_puri/"><i class="fa-brands fa-whatsapp"></i>Whatsapp</a>
+                    <a href=" https://www.instagram.com/sg_pani_puri/ "><i class="fa-brands fa-instagram"></i>Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 SG Pani Puri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        let currentSlide = 0;
+
+        function moveSlide(direction) {
+          const images = document.querySelector(".carousel-images-homepage");
+          const totalSlides = images.children.length;
+        
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        
+          const offset = -currentSlide * 100; // Assuming each image takes 100% of width
+          images.style.transform = `translateX(${offset}%)`;
+        }
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const carouselImages = document.querySelector('.carousel-images-homepage');
+            const totalImages = document.querySelectorAll('.carousel-images-homepage img').length;
+        
+            currentIndex = (currentIndex + step + totalImages) % totalImages;
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Automatic slide movement
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000)
+        function showSlider(){
+            const sidebar = document.querySelector('.sidebar-navbar');
+            const toggleButton = document.querySelector('.toggle-sidebar');
+            const closeButton = document.querySelector('.sidebar-close');
+
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.add('active');
+            });
+
+            closeButton.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        }
+        
+
+    </script>
+
+</body>
+
+</html>

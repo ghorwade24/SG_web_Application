@@ -1,0 +1,106 @@
+{% extends "home.html" %}
+
+{% block content %}
+<style>
+    
+</style>
+
+<div class="about-img">
+    <img src="/media/imges/successful-business-handshake-two-professionals-indoors-generated-by-ai_188544-40088.avif      "
+        alt="content">
+    <div class="image-text">
+        <h4>Franchasi</h4>
+    </div>
+</div>
+
+<div class="Fran-intro">
+    <div class="fran-container">
+        <div class="image">
+            <img src="/media/imges/pani-puri.webp" alt="search">
+        </div>
+        <div class="content">
+
+            <h1>Role of Franchasi</h1>
+            <p>This year marks an exciting new chapter for SG PANI PURI as we embark on our journey to expand our
+                brand through a franchise model. Founded with the vision of building a strong presence in the food
+                industry, this model offers a unique opportunity for aspiring entrepreneurs to join hands with us
+                and become part of our growing family. By franchising, we aim to not only extend the reach of our
+                beloved Pani Puri but also to empower others with the tools and support needed to run a successful
+                business. Together, we can bring the authentic taste of our street food to more communities,
+                creating a network of passionate business owners dedicated to maintaining the quality and tradition
+                that SG PANI PURI is known for
+
+                <br>
+                <br>
+
+                At SG PANI PURI, we are committed to innovation and growth, with the goal of benefiting our
+                franchise partners. As one of the fastest-growing street food chains, we are excited to expand our
+                reach through new franchise partnerships. Join us on this journey, and let's grow together—not just
+                as a brand, but as a unified team dedicated to bringing the authentic taste of Pani Puri to
+                communities everywhere. With SG PANI PURI, you're not just starting a business; you're joining a
+                family that's passionate about quality, tradition, and success.
+
+
+            </p>
+        </div>
+    </div>
+
+</div>
+<h1>Be a Patener with us</h1>
+<p>What exactly are you waiting for? Provide us your inquiry and we will provide you a profitable franchisee opportunity right now!</p>
+
+<form class="form-franchasi" method="post" action="{% url 'franchasi' %}">
+    {% csrf_token %}
+
+    <!-- Row 1: Investor's Name and Age -->
+    <div class="form-row1">
+        <div class="form-group">
+            <label for="name">Investor's Name*</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age*</label>
+            <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+        </div>
+    </div>
+
+    <!-- Row 2: Mobile Number and Email -->
+    <div class="form-row1">
+        <div class="form-group">
+            <label for="mobile">Mobile Number*</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="9999999999" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+    </div>
+
+    <!-- Row 3: Address and City -->
+    <div class="form-row1">
+        
+        <div class="form-group">
+            <label for="city">City*</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" required>
+        </div>
+    </div>
+
+    <!-- Row 4: State and Franchise Location -->
+    <div class="form-row1">
+        
+        <div class="form-group">
+            <label for="location">Location where you are interested in opening a franchisee*</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location" required>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+     
+    <div class="submit-button-container">
+        <button type="submit" class="franchasi-btn-submit">Submit</button>
+    </div>
+</form>
+
+
+
+{% endblock  %}

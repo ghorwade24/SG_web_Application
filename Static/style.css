@@ -1,0 +1,1012 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body overflow prevention */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+/* Basic Header Styling */
+header {
+    width: 100%;
+    height: 6.5rem;
+    position: sticky; /* Keeps header at the top on scroll */
+    top: 0;
+    z-index: 1000; /* Ensures header stays above other elements */
+    background-color: brown; /* Background color for better contrast */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem 2rem; /* Add padding for spacing */
+    width: 100%;
+}
+
+/* Logo Image */
+nav img {
+    height: 4.5rem; 
+    width: 5.5rem;
+    margin: 0 1.5rem;
+    border-radius: 50%; /* Circular border */
+}
+
+/* Navbar Links */
+nav ul {
+    margin-left: 40px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px; /* Reduce spacing for a cleaner look */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: rgb(248, 237, 23); /* Hover effect */
+}
+
+nav ul .O-button {
+    position: relative; /* Enable absolute positioning for the badge */
+    color: #333;
+    background-color: #f8ed17;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover and Focus Effects */
+nav ul .O-button:hover {
+    background-color: #f5d800;
+    color: white;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+nav ul .O-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(248, 237, 23, 0.5);
+}
+.sidebar-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    backdrop-filter: blur(10px); /* Adds a smooth blur effect */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2); /* Softer shadow for modern look */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px; /* Adds some inner spacing */
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+}
+
+/* Show sidebar by adding an active class */
+.sidebar-navbar.active {
+    transform: translateX(0);
+}
+
+/* Sidebar List Items */
+.sidebar-navbar li {
+    width: 100%;
+    list-style: none; /* Removes default bullet points */
+    margin: 20px 0; /* Spacing between items */
+}
+
+/* Sidebar Links */
+.sidebar-navbar a {
+    width: 100%;
+    display: block; /* Makes the link clickable across the entire width */
+    padding: 10px 15px; /* Adds spacing inside links */
+    text-decoration: none; /* Removes underline */
+    font-size: 16px; /* Adjust font size for better readability */
+    font-weight: 500; /* Slightly bold text */
+    color: #333; /* Dark gray for modern appearance */
+    border-radius: 5px; /* Rounded edges for a polished look */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Links */
+.sidebar-navbar a:hover {
+    background-color: #007bff; /* Highlight color (blue) */
+    color: white; /* White text for contrast */
+}
+
+/* Close Button for Sidebar */
+.sidebar-close {
+    align-self: flex-end; /* Position close button at the top-right */
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below the button */
+    color: #333; /* Match link color */
+    transition: color 0.3s ease;
+}
+
+.sidebar-close:hover {
+    color: #007bff; /* Highlight color */
+}
+
+/* Responsive Sidebar (Optional) */
+@media (max-width: 576px) {
+    .sidebar-navbar {
+        width: 200px; /* Smaller width for small screens */
+    }
+
+    .sidebar-navbar a {
+        font-size: 14px; /* Smaller font size for smaller screens */
+        padding: 8px 12px;
+    }
+}
+
+
+/* Badge Style for Product Count */
+
+
+/* Sticky Header on Scroll */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+}
+
+/* Optional JS to add class on scroll for transition effect */
+
+.about-img {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: 600px; /* Fixed height */
+    overflow: hidden;
+    display: flex; /* Centers content (optional) */
+    align-items: center; /* Align image vertically */
+    justify-content: center; /* Align image horizontally */
+    
+  
+}
+
+.about-img img {
+    width: 100%; /* Ensure the image fits the full width */
+    height: 100%; /* Make the image fit the container's height */
+    object-fit: cover; /* Prevents zooming and preserves the image aspect ratio */
+    display: block; /* Prevents extra space below the image */
+}
+
+
+
+/* Carousel Image Styling */
+
+
+/* Image Hover (optional - adds slight zoom effect) */
+.about-img img:hover {
+    transform: scale(1.03); /* Small zoom on hover */
+}   
+.image-text{
+    position: absolute;
+    top: 18%;
+    right: 40%;
+    color: white;
+    padding: 3rem;
+    
+    
+}
+.image-text h4{
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+   
+}
+.home i{
+    padding-left: 50px;
+    height: 50px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(215, 212, 212);
+    
+
+}
+.Home-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.container3 {
+    display: inline-flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Image Section */
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    
+}
+.Why-we-Choose-homepage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #f9f9f9;
+    gap:20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.why-we-homepage {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.heading-why-homepage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+#Points-of-why-homepage {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Carousel Styling */
+.carousel-homepage {
+    flex: 1;
+    position: relative;
+    width: 600px;
+    margin:auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images-homepage {
+    display: flex; /* Align images in a row */
+    transition: transform 0.5s ease; /* Smooth sliding effect */
+    
+}
+
+.carousel-images-homepage img {
+    width: 100%; /* Images will take up the full carousel width */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    height: 600px; /* Adjust height as needed */
+    object-fit: cover; /
+    
+}
+
+
+
+.carousel-homepage button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.Menu-section-homepage {
+    display: flex;
+    align-items: center ;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    color: #333;
+}
+
+.our-menu-homepage {
+    
+    flex: 1;
+  
+}
+
+.our-menu-homepage h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+.our-menu-homepage p{
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Content Section */
+.content {
+    max-width: 600px;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    color: #d9534f;
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+.feture{
+    height: 300px;
+    max-width: 800px;
+
+}
+
+.feture.why-we h1{
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.feture.why-we #Points{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.Founder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: brown;
+}
+
+.Founder .Founder-intro {
+    display: flex;
+    max-width: 1000px; /* Adjusted max-width for better layout */
+    align-items: center;
+    gap: 2rem; /* Space between image and text */
+    flex-direction: row; /* Ensure the layout is row-based (image on left, text on right) */
+}
+
+.Founder .Founder-intro .image {
+    width: 38vh;
+    height: 50vh;
+    flex-shrink: 0; /* Prevent image from shrinking */
+    overflow: hidden; /* Hide overflow for better image control */
+}
+
+.Founder .Founder-intro .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.Founder .Founder-intro .about-founder {
+    flex-grow: 1; /* Allow text to take up remaining space */
+}
+
+.Founder .Founder-intro .about-founder p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white;
+    text-align: justify;
+    margin: 0; /* Remove default margin for better alignment */
+}
+#container2 {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #0c0c0c;
+    padding: 20px;
+}
+
+.header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.description {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.address, .contacts, .menu, .social {
+    flex: 1;
+    min-width: 200px;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.address p, .contacts p {
+    margin: 0;
+    line-height: 1.8;
+    color: white;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu h3 {
+    
+    margin-bottom: 15px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin: 8px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+.menu ul li a:hover {
+    text-decoration: underline;
+    color: #ffd700;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    color: white;
+    font-size: 0.9rem;
+}
+.Fran-intro {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.fran-container {
+    display: inline-flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    gap: 2rem;
+    flex-direction: row-reverse;
+}
+.content-fran {
+    max-width: 600px;
+}
+
+.content-fran h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.content-fran h1 {
+    font-size: 2.5rem;
+    color: #d9534f;
+    margin-bottom: 1.5rem;
+}
+
+.content-fran p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+.mb-3 {
+    margin-bottom: 1rem;
+}
+h3{
+  font-family: 'Poppins', sans-serif;
+  font-weight:400;
+  color:white;
+}
+form {
+    width: 50%; /* Set form width */
+    margin: 20px; /* Center the form on the page */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure the form stays positioned correctly */
+    z-index: 1;
+}
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; 
+    margin: 10px 50px;
+    display: block;
+    font-size: 16px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+.contact-form-submit-container {
+    text-align: center;
+    margin-top: 20px; /* Add spacing above the button */
+    position: relative;
+}
+.contact-btn.contact-btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    
+}
+
+.contact-btn.contact-btn-submit:hover {
+    background-color: #0056b3;
+    
+}
+/* Image Section */
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    
+    
+}
+
+.image-text{
+    position: absolute;
+    top: 18%;
+    right: 40%;
+    color: white;
+    padding: 3rem;
+    
+    
+}
+.image-text h4{
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+   
+}
+.mb-3 {
+    margin-bottom: 1rem;
+}
+h3{
+  font-family: 'Poppins', sans-serif;
+  font-weight:400;
+}
+
+.social h3{
+    margin-left: 230px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; 
+    margin: 10px 50px;
+    display: block;
+    font-size: 16px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+.franchasi-btn-submit{
+    padding: 10px 20px; /* Add padding for a larger button */
+    font-size: 16px; /* Larger font size for readability */
+    color: white; /* White text color */
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.franchasi-btn-submit:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05); 
+}
+
+.franchasi-btn-submit:active {
+  background-color: #004085; 
+  transform: scale(1); 
+}
+
+.franchasi-btn-submit:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 3px rgba(0, 123, 255, 0.5);
+}
+.submit-button-container {
+ 
+    text-align: center;
+    margin: 50px auto; /* Add margin to avoid overlapping */
+    position: relative; /* Keep the button aligned */
+    z-index: 1; /* Space above the button *//* Add space above the button */
+  }
+
+
+.form-franchasi {
+    width: 50%;
+    margin: 0 auto; /* Add spacing below the form */
+    padding: 20px;
+    position: relative; /* Keeps the form flow in the document */
+    z-index: 1; /* Ensure it doesn't overlap other elements */
+    border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+    border-radius: 10px; /* Add rounded corners */
+    background-color: #f9f9f9; /* Light background for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+.form-row1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"], 
+input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Submit Button Styling */
+.btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    margin-left:500px ;
+
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #218838;
+}
+.menu-container-menupage {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu-item-menupage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.menu-item-menupage img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.menu-item-menupage h3 {
+    color: black;
+    margin: 0;
+}
+.price-menupage {
+    font-weight: bold;
+    color: #333;
+}
+/* Add to Cart Button */
+/* Add to Cart Form Styling */
+.menu-form-menupage {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end; /* Aligns the button to the right */
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+.menu-form-menupage button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background-color: #6c757d; /* Neutral secondary color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.cart-container-menupage {
+    text-align: center; /* Center the button */
+    margin: 20px auto; /* Add some space above and below */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 200px; 
+}
+
+
+.cart-btn-menupage .btn-warning-menupage {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn-menupage .btn-warning-menupage:hover {
+    background-color: #e0a800;
+}
+/* For devices with a max width of 1200px (e.g., tablets in landscape mode) */
+@media (max-width: 1200px) {
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    .about-img img {
+        height: 400px; /* Reduce image height */
+    }
+
+    .carousel-images-homepage img {
+        height: 400px;
+    }
+
+    .Founder .Founder-intro {
+        flex-direction: column; /* Stack content vertically */
+        gap: 1rem;
+    }
+
+    .form-franchasi, form {
+        width: 75%; /* Adjust form width */
+    }
+}
+
+/* For devices with a max width of 768px (e.g., tablets in portrait mode) */
+@media (max-width: 768px) {
+    header {
+        height: 5rem; /* Reduce header height */
+    }
+
+    nav img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .image-text {
+        padding: 1.5rem;
+        top: 25%;
+        right: 10%;
+    }
+
+    .about-img img {
+        height: 300px;
+    }
+
+    .content-fran h1, .content h1 {
+        font-size: 1.8rem; /* Smaller font sizes */
+    }
+
+    .menu ul li {
+        margin: 6px 0;
+    }
+}
+
+/* For devices with a max width of 576px (e.g., small smartphones) */
+@media (max-width: 576px) {
+    .container3, .Why-we-Choose-homepage, .Fran-intro {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .carousel-homepage {
+        width: 100%; /* Full width carousel */
+    }
+
+    .menu ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    .Founder .Founder-intro {
+        gap: 0.5rem;
+    }
+
+    .form-control {
+        padding: 10px; /* Smaller padding */
+        font-size: 14px;
+    }
+
+    .contact-btn.contact-btn-submit, .franchasi-btn-submit {
+        font-size: 14px;
+        padding: 8px 16px; /* Smaller buttons */
+    }
+
+    .social-icons a img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* For devices with a max width of 360px (e.g., very small smartphones) */
+@media (max-width: 360px) {
+    .form-franchasi, form {
+        width: 90%; /* Maximize form width for small screens */
+    }
+
+    .content-fran h2, .content h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,132 @@
+{% extends "home.html" %}
+
+{% block content %}
+<style>
+    .order-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    
+    .order-container h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+    
+    .order-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    .order-table th, 
+    .order-table td {
+        border: 1px solid #dee2e6;
+        padding: 12px;
+        text-align: center;
+    }
+    
+    .order-table th {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .order-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .order-table tr:hover {
+        background-color: #e8f0fe;
+    }
+    
+    .order-container p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    button.btn-primary {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+</style>
+    
+<div class="about-img">
+    <img src="/media/imges/PaniPuri_Logo.jpg" alt="Logo">
+    <div class="image-text">
+        <h4 class="Order">Order Summary</h4>
+    </div>
+</div>
+
+<div class="home">
+    <i class="fa-solid fa-house"></i> Home-Order
+</div>
+
+<div class="order-container">
+    <h1>Your Cart</h1>
+    
+    {% if cart_items %}
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Dish</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cart_item in cart_items %}
+                    <tr>
+                        <td name="Dish_name">{{ cart_item.item.dish_name }}</td>
+                        <td name ="Dish_description">{{ cart_item.item.description }}</td>
+                        <td name ="Dish_quantity">{{ cart_item.quantity }}</td>
+                        <td name ="Dish_price">Rs {{ cart_item.item.price }}</td>
+                        <td name ="total">Rs {{ cart_item.total_price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p><strong>Total Items:</strong> {{ cart_items|length }}</p>
+        <p><strong>Total Price:</strong> Rs {{ total_price }}</p>
+        <form method="post" action="{% url 'clear_cart' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+    {% else %}
+        <p>Your cart is empty. <a href="{% url 'menu_view' %}">Go back to the menu</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}

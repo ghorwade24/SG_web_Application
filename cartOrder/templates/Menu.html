@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+
+<div class="about-img">
+    <img src="/media/imges/PaniPuri_Logo.jpg" alt="Logo">
+    <div class="image-text">
+        <h4 class="Menu">Menu</h4>
+    </div>
+</div>
+
+<div class ="cart-container-menupage">
+    <a href="{% url 'order' %}" class="cart-btn-menupage">
+        <button class="btn btn-warning-menupage">
+            🛒 Cart (<span id="cart-count">{{ cart_count }}</span>)
+        </button>
+    </a>
+</div>
+
+
+<div class="menu-container-menupage">
+    
+    <!-- Cart Counter Display -->
+    
+
+    {% for item in menu_items %}
+    <div class="menu-item-menupage">
+        {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.dish_name }}">
+        {% endif %}
+        
+        <div>
+            <h3>{{ item.dish_name }}</h3>
+            <p>{{ item.description }}</p>
+        </div>
+        
+        <div class="price-menupage">
+            Rs {{ item.price }}<br>
+            
+        </div>
+        
+        <form class="menu-form-menupage" method="POST" action="{% url 'add_to_cart' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary">Add to Cart</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
