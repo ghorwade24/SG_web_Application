@@ -16,7 +16,7 @@
     <header>
         <nav>
             <img src='/media/imges/PaniPuri_Logo.jpg' alt="logo">
-            <ul>
+            <ul class="nav-links">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'about-us' %}">About-us</a></li>
                 <li><a href="{% url 'menu' %}">Menu</a></li>
@@ -29,7 +29,7 @@
         </nav>
       
         <nav class = "sidebar-navbar">
-            <span class="sidebar-close">&times;</span>
+            <span class="sidebar-close" onclick=hideSidebar()>&times;</span>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'about-us' %}">About-us</a></li>
@@ -44,10 +44,12 @@
     </header>
 
 {% block content %}
-    <div class="about-img">
+    <div class="about-img"> 
         
         <img src="/media/imges/pani-puri.webp" class="d-block w-100" alt="Pani Puri">
-
+        <div class="image-text">
+            <h4 class="Menu">Home</h4>
+        </div>
     </div>
 
 
@@ -207,6 +209,13 @@
             closeButton.addEventListener('click', () => {
                 sidebar.classList.remove('active');
             });
+        }
+        function showSidebar() {
+            document.getElementById("sidebar").style.right = "0";
+        }
+        
+        function hideSidebar() {
+            document.getElementById("sidebar").style.right = "-250px";
         }
         
 

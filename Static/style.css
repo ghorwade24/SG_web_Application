@@ -549,7 +549,12 @@ h3 {
     padding: 2rem;
     background-color: #f9f9f9;
 }
-
+.Fran-intro .image img {
+    width: 150px;  /* Adjust size */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
 .fran-container {
     display: inline-flex;
     max-width: 1200px;
@@ -652,12 +657,13 @@ textarea.form-control {
 
 .image-text{
     position: absolute;
-    top: 18%;
-    right: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
     color: white;
-    padding: 3rem;
-    
-    
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 .image-text h4{
     font-size: 2.5rem;
@@ -803,8 +809,7 @@ textarea {
     justify-content: center;
     align-items: center;
     width: 15%;
-    margin-left:500px ;
-
+    margin-left:500px;
     padding: 15px 20px;
     font-size: 18px;
     font-weight: bold;
@@ -872,8 +877,8 @@ textarea {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .cart-container-menupage {
-    text-align: center; /* Center the button */
-    margin: 20px auto; /* Add some space above and below */
+    text-align: center; 
+    margin: 20px auto; 
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -903,7 +908,7 @@ textarea {
     }
 
     .about-img img {
-        height: 400px; /* Reduce image height */
+        height: 100%; 
     }
 
     .carousel-images-homepage img {
@@ -916,7 +921,7 @@ textarea {
     }
 
     .form-franchasi, form {
-        width: 75%; /* Adjust form width */
+        width: 80%; /* Adjust form width */
     }
 }
 
@@ -943,12 +948,12 @@ textarea {
 
     .image-text {
         padding: 1.5rem;
-        top: 25%;
+        top: 50%;
         right: 10%;
     }
 
     .about-img img {
-        height: 300px;
+        height: 100%;
     }
 
     .content-fran h1, .content h1 {
@@ -968,7 +973,7 @@ textarea {
     }
 
     .carousel-homepage {
-        width: 100%; /* Full width carousel */
+        width: 90%; /* Full width carousel */
     }
 
     .menu ul {
@@ -1008,5 +1013,238 @@ textarea {
 
     .footer p {
         font-size: 0.8rem;
+    }
+}
+@media (max-width: 768px) {
+    .nav-links li:not(.toggle-sidebar) {
+        display: none;
+    }
+    .toggle-sidebar {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    nav img {
+        width: 40px; /* Smaller logo on mobile */
+        left: 15px;
+        padding-bottom: 5px;
+    }
+}
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    form .contact-section {
+        max-width: 100%;
+    }
+}
+
+/* 📱 Mobile View (for screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+    .form-row1 {
+        flex-direction: column; /* Stack form fields vertically */
+        gap: 10px;
+    }
+
+    .form-control {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .franchasi-btn-submit {
+        width: 100%; /* Make the button full-width */
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* 📱 Smaller Phones (for screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+    .form-control {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .franchasi-btn-submit {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fran-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .image img {
+        width: 100px;  /* Reduce image size */
+        margin-bottom: 15px; /* Add spacing */
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+/* 📱 Smaller Phones (for screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+    .image img {
+        width: 80px;  /* Further reduce image size */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+/* 📱 Tablet View (for screens smaller than 992px) */
+@media screen and (max-width: 992px) {
+    .container3 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container3 .image img {
+        max-width: 600px;
+    }
+
+    .container3 .content {
+        max-width: 90%;
+    }
+}
+
+/* 📱 Mobile View (for screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+    .container3 .content h2 {
+        font-size: 24px;
+    }
+    .Menu-section-homepage {
+        flex-direction: column; /* Stack content vertically */
+        gap: 1rem;
+    }
+    .container3 .content h1 {
+        font-size: 30px;
+    }
+
+    .container3 .content p {
+        font-size: 16px;
+    }
+}
+
+/* 📱 Small Phones (for screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+    .container3 .content h2 {
+        font-size: 20px;
+    }
+
+    .container3 .content h1 {
+        font-size: 24px;
+    }
+
+    .container3 .content p {
+        font-size: 14px;
+    }
+
+    .container3 .image img {
+        width: 100%;
+    }
+    .our-menu-homepage{
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .menu-container-menupage {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .menu-item-menupage {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .menu-item-menupage img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-form-menupage {
+        width: 100%; /* Full width for better touch interaction */
+        justify-content: center; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-container-menupage {
+        padding: 10px;
+    }
+
+    .menu-item-menupage {
+        flex-direction: column;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu-item-menupage img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .menu-form-menupage button {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 7px 10px;
+    }
+
+    .cart-container-menupage {
+        max-width: 150px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-container-menupage {
+        padding: 5px;
+    }
+
+    .menu-item-menupage img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .menu-item-menupage h3 {
+        font-size: 1rem;
+    }
+
+    .price-menupage {
+        font-size: 0.9rem;
+    }
+
+    .menu-form-menupage button {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+
+    .cart-container-menupage {
+        max-width: 130px;
+        padding: 5px;
+    }
+
+    .cart-btn-menupage .btn-warning-menupage {
+        font-size: 0.85rem;
+        padding: 8px 15px;
     }
 }
